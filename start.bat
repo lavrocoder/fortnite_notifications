@@ -8,6 +8,9 @@ if %errorlevel% neq 0 (
         echo Installing error
         exit /b 1
     )
+    echo.
+    set "Path=%USERPROFILE%\.local\bin;%Path%"
+    powershell -Command "$env:Path = '$env:USERPROFILE\.local\bin;' + $env:Path"
 )
 
 echo.
