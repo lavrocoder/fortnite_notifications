@@ -1,0 +1,114 @@
+[
+    {
+        "x": 130,
+        "y": 400,
+        "name": "Grape Seed",
+        "notification": false,
+        "price": "150"
+    },
+    {
+        "x": 560,
+        "y": 400,
+        "name": "Radish Seed",
+        "notification": false,
+        "price": "1 200"
+    },
+    {
+        "x": 990,
+        "y": 400,
+        "name": "Watermelon Seed",
+        "notification": false,
+        "price": "5 000"
+    },
+    {
+        "x": 1430,
+        "y": 400,
+        "name": "Pepper Seed",
+        "notification": false,
+        "price": "25 000"
+    },
+    {
+        "x": 130,
+        "y": 600,
+        "name": "Cactus Seed",
+        "notification": false,
+        "price": null
+    },
+    {
+        "x": 560,
+        "y": 600,
+        "name": "Corn Seed",
+        "notification": false,
+        "price": null
+    },
+    {
+        "x": 990,
+        "y": 600,
+        "name": "Apple Seed",
+        "notification": true,
+        "price": "1 000 000"
+    },
+    {
+        "x": 1430,
+        "y": 600,
+        "name": "Bamburai Seed",
+        "notification": true,
+        "price": "2 500 000"
+    },
+    {
+        "x": 130,
+        "y": 800,
+        "name": "Cococanon Seed",
+        "notification": true,
+        "price": "5 000 000"
+    },
+    {
+        "x": 560,
+        "y": 800,
+        "name": "Smashkin Seed",
+        "notification": true,
+        "price": null
+    },
+    {
+        "x": 990,
+        "y": 800,
+        "name": "Sunflower Seed",
+        "notification": true,
+        "price": "25 000 000"
+    },
+    {
+        "x": 1430,
+        "y": 800,
+        "name": "Pitayaboom Seed",
+        "notification": true,
+        "price": null
+    },
+    {
+        "x": 130,
+        "y": 1000,
+        "name": "Peely Seed",
+        "notification": true,
+        "price": "75 000 000"
+    },
+    {
+        "x": 560,
+        "y": 1000,
+        "name": "Carnivora Seed",
+        "notification": true,
+        "price": null
+    },
+    {
+        "x": 990,
+        "y": 1000,
+        "name": "Mango Dragon Seed",
+        "notification": true,
+        "price": "200 000 000"
+    },
+    {
+        "x": 1430,
+        "y": 1000,
+        "name": "Shroomy Seed",
+        "notification": true,
+        "price": "300 000 000"
+    }
+]
