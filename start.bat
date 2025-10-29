@@ -10,7 +10,6 @@ if %errorlevel% neq 0 (
     )
     echo.
     set "Path=%USERPROFILE%\.local\bin;%Path%"
-    powershell -Command "$env:Path = '$env:USERPROFILE\.local\bin;' + $env:Path"
 )
 
 echo.
