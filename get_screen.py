@@ -78,8 +78,10 @@ def getSnapshot(hwnd):  # get Window HBITMAP as Image
     gdi32.DeleteObject(hbmp)
     return img
 
-def get_screen(name, path=None) -> Image.Image:
+def get_screen(name, path=None) -> Image.Image | None:
     hwnd = get_hwnd_by_name(name)
+    if hwnd is None:
+        return None
     img = getSnapshot(hwnd)
     if path:
         img.save(path)

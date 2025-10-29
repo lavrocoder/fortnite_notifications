@@ -5,8 +5,7 @@ import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from aiogram import Bot
-from aiogram.types import FSInputFile
+import telebot
 from dotenv import load_dotenv
 from loguru import logger
 
@@ -28,15 +27,10 @@ logger.add("logs/{time}.log")
 
 
 def send_message(text: str, img) -> None:
-    async def send_async_message(message, image):
-        bot = Bot(token=TELEGRAM_TOKEN)
-        try:
-            photo = FSInputFile(image)
-            await bot.send_photo(chat_id=TELEGRAM_ID, photo=photo, caption=message)
-        finally:
-            await bot.session.close()
     if TELEGRAM_TOKEN and TELEGRAM_ID:
-        asyncio.run(send_async_message(text, img))
+        bot = telebot.TeleBot(token=TELEGRAM_TOKEN)
+        with open(img, 'rb') as photo:
+            bot.send_photo(TELEGRAM_ID, photo, caption=text)
     logger.info(text)
 
 
@@ -54,6 +48,9 @@ def main():
     now = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     img_path = images_path / f'{now}.jpg'
     img = get_screen('Fortnite', img_path)
+    if img is None:
+        logger.info("Fortnite не запущен")
+        return
     img = img.convert("RGB")
 
     restock_seeds = []
