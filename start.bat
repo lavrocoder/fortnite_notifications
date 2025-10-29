@@ -1,27 +1,26 @@
 @echo off
-chcp 65001 >nul
 
-REM РџСЂРѕРІРµСЂРєР°, СѓСЃС‚Р°РЅРѕРІР»РµРЅР° Р»Рё СѓС‚РёР»РёС‚Р° uv
+REM Проверка, установлена ли утилита uv
 where uv >nul 2>nul
 if %errorlevel% neq 0 (
-    echo РЈС‚РёР»РёС‚Р° uv РЅРµ РЅР°Р№РґРµРЅР°. РЈСЃС‚Р°РЅР°РІР»РёРІР°СЋ...
+    echo Утилита uv не найдена. Устанавливаю...
     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
     if %errorlevel% neq 0 (
-        echo РћС€РёР±РєР° СѓСЃС‚Р°РЅРѕРІРєРё uv. РџСЂРѕРІРµСЂСЊС‚Рµ СѓСЃС‚Р°РЅРѕРІРєСѓ Python Рё pip.
+        echo Ошибка установки uv. Проверьте установку Python и pip.
         exit /b 1
     )
 ) else (
-    echo РЈС‚РёР»РёС‚Р° uv СѓР¶Рµ СѓСЃС‚Р°РЅРѕРІР»РµРЅР°.
+    echo Утилита uv уже установлена.
 )
 
 echo.
-echo Р’С‹РїРѕР»РЅСЏСЋ uv sync...
+echo Выполняю uv sync...
 uv sync --link-mode=copy
 if %errorlevel% neq 0 (
-    echo РћС€РёР±РєР° РїСЂРё РІС‹РїРѕР»РЅРµРЅРёРё uv sync.
+    echo Ошибка при выполнении uv sync.
     exit /b 1
 )
 
 echo.
-echo Р—Р°РїСѓСЃРєР°СЋ uv run main.py...
+echo Запускаю uv run main.py...
 uv run main.py
